@@ -1,0 +1,27 @@
+{
+  "name": "allthekeeps_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "^3.2.3",
+    "cron": "^1.8.2",
+    "cross-fetch": "^3.0.6",
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.3.0",
+    "mongoose": "^5.10.9",
+    "subscriptions-transport-ws": "^0.9.18",
+    "telegraf": "^3.38.0",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

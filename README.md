@@ -23,7 +23,7 @@ Designed to receive instant information about changes in the statuses of deposit
 
 ![general info](public/screenshot4.jpg)
 
-- In the event of a change in the% Collaterialization of the deposit belonging to any operator from the user's list to the threshold values (currently 125% and 110%), it immediately informs about it
+- In the event of a change in the % Collaterialization of the deposit belonging to any operator from the user's list to the threshold values (currently 125% and 110%), it immediately informs about it
 
 ![general info](public/screenshot5.jpg)
 

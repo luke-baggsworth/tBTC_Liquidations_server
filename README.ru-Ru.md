@@ -1,6 +1,6 @@
 [Описание на английском](README.md)
 
-# [Telegram channel](https://t.me/tbtcliquidationsinfo)
+# [Телеграм канал](https://t.me/tbtcliquidationsinfo)
 
 Предназначен для получения мгновенной информации о изменениях статусах депозитов и достижении ими пороговых значений Collaterialization для всех депозитов в систем
 
@@ -17,7 +17,7 @@
 ![general info](public/screenshot3.jpg)
 
 
-# [Telegram bot](https://t.me/tBTC_Liquidationsbot)
+# [Телеграм бот](https://t.me/tBTC_Liquidationsbot)
 
 Предназначен для получения мгновенной информации о изменениях статусах депозитов и достижении ими пороговых значений Collaterialization для всех депозитов выбранных операторов
 
@@ -29,7 +29,7 @@
 
 ![general info](public/screenshot5.jpg)
 
-## Commands 
+## Команды 
 
 - /start - Выводит главное меню
 
@@ -52,7 +52,7 @@
 - /statistics_on - Подписаться на ежедневную (в 15 UTC+0) информационную рассылку о состоянии оператора и депозитов
 - /statistics_off - Отписаться от рассылки
 
-# Discord bot
+# Дискорд бот
 
 - выдает общую информация о депозитах по запросу
 

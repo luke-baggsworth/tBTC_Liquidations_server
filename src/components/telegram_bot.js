@@ -160,14 +160,14 @@ async function turnOnNotifications(ctx) {
   const subscriber = await getOrCreateSubscriber(ctx);
   subscriber.daily_statistics = true;
   await subscriber.save();
-  ctx.reply('statistics is on! \n\n Show menu:\n/start`');
+  ctx.reply('statistics is on! \n\n Show menu:\n/start');
 }
 
 async function turnOffNotifications(ctx) {
   const subscriber = await getOrCreateSubscriber(ctx);
   subscriber.daily_statistics = false;
   await subscriber.save();
-  ctx.reply('statistics is off! \n\n Show menu:\n/start`');
+  ctx.reply('statistics is off! \n\n Show menu:\n/start');
 }
 
 async function addOperator(ctx) {
@@ -184,7 +184,7 @@ async function addOperator(ctx) {
       await subscriber.save();
       ctx.reply('Operator successfully added \n\n Show menu:\n/start`');
     } else {
-      ctx.reply('Operator does not exist \n\n Show menu:\n/start`');
+      ctx.reply('Operator does not exist \n\n Show menu:\n/start');
     }
   }
 }
@@ -194,11 +194,11 @@ async function removeOperator(ctx) {
   const text = ctx.message.text;
   const hasOperator = subscriber.operators.includes(text);
   if (!hasOperator) {
-    ctx.reply('Operator not in your list \n\n Show menu:\n/start`');
+    ctx.reply('Operator not in your list \n\n Show menu:\n/start');
   }
   subscriber.operators = subscriber.operators.filter(o => o !== text);
   await subscriber.save();
-  ctx.reply('Operator successfully removed \n\n Show menu:\n/start`');
+  ctx.reply('Operator successfully removed \n\n Show menu:\n/start');
 }
 
 module.exports = { start, bot, getOperator };

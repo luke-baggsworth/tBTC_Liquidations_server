@@ -1,3 +1,5 @@
+[Russian description](README.ru-RU.md)
+
 # [Telegram channel](https://t.me/tbtcliquidationsinfo)
 
 Designed to receive instant information about changes in the statuses of deposits and their achievement of the Collaterialization thresholds for all deposits in the system

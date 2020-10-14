@@ -1,4 +1,4 @@
-[Russian description](README.ru-RU.md)
+[Russian description](README.ru-Ru.md)
 
 # [Telegram channel](https://t.me/tbtcliquidationsinfo)
 

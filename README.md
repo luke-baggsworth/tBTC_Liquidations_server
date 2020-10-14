@@ -52,7 +52,7 @@ Designed to receive instant information about changes in the statuses of deposit
 - /statistics_on - Subscribe to the daily (at 15 UTC + 0) newsletter about the state of the operator and deposits
 - /statistics_off - Cancel subscription
 
-# Discord bot
+# [Discord bot](https://discord.com/api/oauth2/authorize?client_id=766057507097149490&permissions=2048&scope=bot)
 
 - gives general information about deposits
 

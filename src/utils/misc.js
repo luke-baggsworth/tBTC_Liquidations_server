@@ -19,7 +19,7 @@ function getMovedDeposits(oldDeposits, newDeposits) {
   const movedDeposits = [];
   for (const d of newDeposits) {
     const oldDeposit = oldDeposits.find(item => item.id === d.id);
-      // status changed from ACTIVE to any other
+      // status changed
     if (
       oldDeposit && 
       d.currentState !== oldDeposit.currentState
@@ -35,7 +35,7 @@ function getMovedDepositsOfSub(oldDeposits, newDeposits, subscriber) {
   for (const d of newDeposits) {
     for (const o of subscriber.operators) {
       const oldDeposit = oldDeposits.find(item => item.id === d.id);
-        // status changed from ACTIVE to any other
+        // status changed
       if (
         oldDeposit && 
         d.currentState !== oldDeposit.currentState &&

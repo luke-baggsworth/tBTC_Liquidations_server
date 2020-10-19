@@ -78,7 +78,8 @@ function movedDepositsInfo(oldDeposits, newDeposits) {
     const address = formatId(d.contractAddress);
     const url = formatLink(`/deposit/${d.id}`);
     const lotSize = getSatoshisAsBitcoin(d.lotSizeSatoshis);
-    const prevState = stateToString(d.currentState);
+    const oldDeposit = oldDeposits.find(dep => dep.id === d.id);
+    const prevState = stateToString(oldDeposit.currentState);
     const currentState = stateToString(d.currentState);
     return `
       Deposit ID [${address}](${url}) 
@@ -99,7 +100,8 @@ function movedDepositsInfoOfSub(oldDeposits, newDeposits, subscriber) {
     const url = formatLink(`/deposit/${deposit.id}`);
     const operatorUrl = formatLink(`/operator/${operator}`);
     const lotSize = getSatoshisAsBitcoin(deposit.lotSizeSatoshis);
-    const prevState = stateToString(deposit.currentState);
+    const oldDeposit = oldDeposits.find(dep => dep.id === deposit.id);
+    const prevState = stateToString(oldDeposit.currentState);
     const currentState = stateToString(deposit.currentState);
     return `
       Deposit ID [${address}](${url})

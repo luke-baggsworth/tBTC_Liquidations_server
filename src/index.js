@@ -15,10 +15,10 @@ new CronJob('0 0 18 * * *', commonOperatorInfoToSubsribers, null, true, 'Europe/
 const db = mongoose.connection;
 mongoose.connect(process.env.MONGO_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
 
-function main() {
-  TelegramBot.start();
-  DiscordBot.start();
-  AllTheKeeps.start();
+async function main() {
+  await TelegramBot.start();
+  await DiscordBot.start();
+  await AllTheKeeps.start();
 }
 
 db.on('error', e => console.error(e));

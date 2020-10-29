@@ -35,14 +35,10 @@ async function start() {
       if (!data) return;
       const newDeposits = filterDepositsAll(data.deposits);
       const oldDeposits = await Deposit.find();
+      await Deposit.deleteMany({});
       for(const d of newDeposits) {
-        const deposit = oldDeposits.find(item => item.id === d.id);
-        if (deposit) {
-          await Deposit.updateOne({ _id: deposit._id }, d);
-        } else {
-          const newDeposit = new Deposit(d);
-          await newDeposit.save();
-        }
+        const newDeposit = new Deposit(d);
+        await newDeposit.save();
       }
 
       movedDepositsInfoToChannel(oldDeposits, newDeposits);

@@ -5,7 +5,7 @@ const { commonInfo, commonOperatorInfo } = require('./../utils/messages');
 const { getOperator } = require('./telegram_bot');
 const prefix = '/';
 
-function start() {
+async function start() {
 
   const client = new Discord.Client();
   client.on('message', async message => {
@@ -28,7 +28,7 @@ function start() {
     }
   });
   
-  client.login(process.env.DISCORD_BOT_TOKEN);
+  await client.login(process.env.DISCORD_BOT_TOKEN);
 }
 
 async function getDepositsInfo() {

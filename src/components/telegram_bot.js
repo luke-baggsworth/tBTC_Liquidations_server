@@ -21,7 +21,7 @@ const apolloClient = new ApolloClient({
   cache: new InMemoryCache() 
 });
 
-function start() {
+async function start() {
 
   bot.command('start', showButtonMenu);
   bot.command('help', showHelp);
@@ -64,7 +64,7 @@ function start() {
     CHAT_STATE[ctx.chat.id] = '';
   });
   
-  bot.launch();
+  await bot.launch();
 }
 
 async function getOrCreateSubscriber(ctx) {

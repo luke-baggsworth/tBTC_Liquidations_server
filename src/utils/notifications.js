@@ -51,19 +51,19 @@ async function movedDepositsInfoToSubscribers(oldDeposits, newDeposits) {
   }
 }
 
-async function lowDepositsInfoToChannel(deposits) {
+async function lowDepositsInfoToChannel(oldDeposits, newDeposits) {
   const price = await Price.findOne();
-  const msg = lowCollaterializationDepositsInfo(deposits, price);
+  const msg = lowCollaterializationDepositsInfo(oldDeposits, newDeposits, price);
   if (msg) {
     bot.telegram.sendMessage(process.env.TELEGRAM_CHANNEL_ID, msg, { parse_mode: 'Markdown' });
   }
 }
 
-async function lowDepositsInfoToSubscribers(deposits) {
+async function lowDepositsInfoToSubscribers(oldDeposits, newDeposits) {
   const subscribers = await Subscriber.find();
   const price = await Price.findOne();
   for (const sub of subscribers) {
-    const msg = lowCollaterializationDepositsInfoOfSub(deposits, price, sub);
+    const msg = lowCollaterializationDepositsInfoOfSub(oldDeposits, newDeposits, price, sub);
     if (msg) {
       bot.telegram.sendMessage(sub.telegram_id, msg, { parse_mode: 'Markdown' });
     }

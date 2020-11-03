@@ -43,8 +43,8 @@ async function start() {
 
       movedDepositsInfoToChannel(oldDeposits, newDeposits);
       await movedDepositsInfoToSubscribers(oldDeposits, newDeposits);
-      await lowDepositsInfoToChannel(newDeposits);
-      await lowDepositsInfoToSubscribers(newDeposits);
+      await lowDepositsInfoToChannel(oldDeposits, newDeposits);
+      await lowDepositsInfoToSubscribers(oldDeposits, newDeposits);
     }
   });
 }

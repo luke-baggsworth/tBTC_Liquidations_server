@@ -116,8 +116,8 @@ function movedDepositsInfoOfSub(oldDeposits, newDeposits, subscriber) {
   return msg;
 }
 
-function lowCollaterializationDepositsInfo(deposits, price) {
-  const lowDeposits = getLowCollaterializationDeposits(deposits, price);
+function lowCollaterializationDepositsInfo(oldDeposits, newDeposits, price) {
+  const lowDeposits = getLowCollaterializationDeposits(oldDeposits, newDeposits, price);
   const min110 = lowDeposits.min110.map(f(110)).join('\n');
   const min125 = lowDeposits.min125.map(f(125)).join('\n');
 
@@ -135,8 +135,8 @@ function lowCollaterializationDepositsInfo(deposits, price) {
   }
 }
 
-function lowCollaterializationDepositsInfoOfSub(deposits, price, subscriber) {
-  const lowDeposits = getLowCollaterializationDepositsOfSub(deposits, price, subscriber);
+function lowCollaterializationDepositsInfoOfSub(oldDeposits, newDeposits, price, subscriber) {
+  const lowDeposits = getLowCollaterializationDepositsOfSub(oldDeposits, newDeposits, price, subscriber);
   const min110 = lowDeposits.min110.map(f(110)).join('\n');
   const min125 = lowDeposits.min125.map(f(125)).join('\n');
 

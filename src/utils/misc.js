@@ -54,10 +54,12 @@ function getLowCollaterializationDeposits(oldDeposits, newDeposits, price) {
   for (const d of newDeposits) {
     if (d.currentState === 'LIQUIDATED') continue;
     const oldDeposit = oldDeposits.find(item => item.id === d.id);
-    const oldDepositColl = +getCollaterization(oldDeposit, price);
     const coll = +getCollaterization(d, price);
-    if (oldDeposit && oldDepositColl < 110 && coll < 110) continue;
-    if (oldDeposit && oldDepositColl < 125 && coll < 125) continue;
+    if (oldDeposit) {
+      const oldDepositColl = +getCollaterization(oldDeposit, price);
+      if (oldDepositColl < 110 && coll < 110) continue;
+      if (oldDepositColl < 125 && oldDepositColl >= 100 && coll < 125 && coll >= 110) continue;
+    }
     if (coll < 110) {
       lowDeposits.min110.push(d);
     } else if (coll < 125) {
@@ -74,10 +76,12 @@ function getLowCollaterializationDepositsOfSub(oldDeposits, newDeposits, price, 
       if (d.currentState === 'LIQUIDATED') continue;
       if (!d.bondedECDSAKeep.members.some(item => item.id === o)) continue;
       const oldDeposit = oldDeposits.find(item => item.id === d.id);
-      const oldDepositColl = +getCollaterization(oldDeposit, price);
       const coll = +getCollaterization(d, price);
-      if (oldDeposit && oldDepositColl < 110 && coll < 110) continue;
-      if (oldDeposit && oldDepositColl < 125 && coll < 125) continue;
+      if (oldDeposit) {
+        const oldDepositColl = +getCollaterization(oldDeposit, price);
+        if (oldDepositColl < 110 && coll < 110) continue;
+        if (oldDepositColl < 125 && oldDepositColl >= 100 && coll < 125 && coll >= 110) continue;
+      }
       if (coll < 110) {
         lowDeposits.min110.push({ operator: o, deposit: d });
       } else if (coll < 125) {
